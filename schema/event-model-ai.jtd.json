@@ -1,0 +1,214 @@
+{
+  "metadata": {
+    "version": "0.1",
+    "description": "A JSON Typedef of an event model, see https://eventmodeling.org\nCompletely AI generated from an example JSON."
+  },
+  "properties": {
+    "slices": {
+      "elements": {
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "commands": {
+            "elements": {
+              "properties": {
+                "id": { "type": "string" },
+                "title": { "type": "string" },
+                "fields": {
+                  "elements": {
+                    "properties": {
+                      "name": { "type": "string" },
+                      "type": { "type": "string" },
+                      "example": { "type": "string" },
+                      "mapping": { "type": "string" },
+                      "cardinality": { "enum": ["Single", "List"] }
+                    }
+                  }
+                },
+                "type": { "enum": ["COMMAND"] }
+              }
+            }
+          },
+          "events": {
+            "elements": {
+              "properties": {
+                "id": { "type": "string" },
+                "title": { "type": "string" },
+                "fields": {
+                  "elements": {
+                    "properties": {
+                      "name": { "type": "string" },
+                      "type": { "type": "string" },
+                      "example": { "type": "string" },
+                      "mapping": { "type": "string" },
+                      "cardinality": { "enum": ["Single", "List"] }
+                    }
+                  }
+                },
+                "type": { "enum": ["EVENT"] }
+              }
+            }
+          },
+          "readmodels": {
+            "elements": {
+              "properties": {
+                "id": { "type": "string" },
+                "title": { "type": "string" },
+                "fields": {
+                  "elements": {
+                    "properties": {
+                      "name": { "type": "string" },
+                      "type": { "type": "string" },
+                      "example": { "type": "string" },
+                      "mapping": { "type": "string" },
+                      "cardinality": { "enum": ["Single", "List"] }
+                    }
+                  }
+                },
+                "type": { "enum": ["READMODEL"] }
+              }
+            }
+          },
+          "screens": {
+            "elements": {
+              "properties": {
+                "id": { "type": "string" },
+                "title": { "type": "string" },
+                "fields": {
+                  "elements": {
+                    "properties": {
+                      "name": { "type": "string" },
+                      "type": { "type": "string" },
+                      "example": { "type": "string" },
+                      "mapping": { "type": "string" },
+                      "cardinality": { "enum": ["Single", "List"] }
+                    }
+                  }
+                },
+                "type": { "enum": ["SCREEN"] }
+              }
+            }
+          },
+          "processors": {
+            "elements": {
+              "properties": {
+                "id": { "type": "string" },
+                "title": { "type": "string" },
+                "fields": {
+                  "elements": {
+                    "properties": {
+                      "name": { "type": "string" },
+                      "type": { "type": "string" },
+                      "example": { "type": "string" },
+                      "mapping": { "type": "string" },
+                      "cardinality": { "enum": ["Single", "List"] }
+                    }
+                  }
+                },
+                "type": { "enum": ["AUTOMATION"] }
+              }
+            }
+          },
+          "specifications": {
+            "elements": {
+              "properties": {
+                "sliceName": { "type": "string" },
+                "title": { "type": "string" },
+                "given": {
+                  "elements": {
+                    "properties": {
+                      "title": { "type": "string" },
+                      "id": { "type": "string" },
+                      "type": { "enum": ["SPEC_EVENT"] },
+                      "fields": {
+                        "elements": {
+                          "properties": {
+                            "name": { "type": "string" },
+                            "type": { "type": "string" },
+                            "example": { "type": "string" },
+                            "mapping": { "type": "string" },
+                            "cardinality": { "enum": ["Single", "List"] }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "when": {
+                  "elements": {
+                    "properties": {
+                      "title": { "type": "string" },
+                      "id": { "type": "string" },
+                      "type": { "enum": ["SPEC_COMMAND"] },
+                      "fields": {
+                        "elements": {
+                          "properties": {
+                            "name": { "type": "string" },
+                            "type": { "type": "string" },
+                            "example": { "type": "string" },
+                            "mapping": { "type": "string" },
+                            "cardinality": { "enum": ["Single", "List"] }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "then": {
+                  "elements": {
+                    "properties": {
+                      "title": { "type": "string" },
+                      "id": { "type": "string" },
+                      "type": {
+                        "enum": ["SPEC_EVENT", "SPEC_READMODEL", "SPEC_ERROR"]
+                      },
+                      "fields": {
+                        "elements": {
+                          "properties": {
+                            "name": { "type": "string" },
+                            "type": { "type": "string" },
+                            "example": { "type": "string" },
+                            "mapping": { "type": "string" },
+                            "cardinality": { "enum": ["Single", "List"] }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "aggregates": {
+      "elements": {
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "fields": {
+            "elements": {
+              "properties": {
+                "name": { "type": "string" },
+                "type": { "type": "string" },
+                "example": { "type": "string" },
+                "mapping": { "type": "string" },
+                "cardinality": { "enum": ["Single", "List"] }
+              }
+            }
+          },
+          "type": { "enum": ["AGGREGATE"] }
+        }
+      }
+    },
+    "sliceDependencies": {
+      "elements": {
+        "properties": {
+          "source": { "type": "string" },
+          "target": { "type": "string" }
+        }
+      }
+    }
+  }
+}
