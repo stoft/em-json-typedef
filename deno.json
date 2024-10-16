@@ -1,7 +1,7 @@
 {
   "tasks": {
-    "test": "deno test tests/*.tests.ts",
-    "test-watch": "deno test tests/*.tests.ts --watch src/event-model.ts",
+    "test": "deno test tests/*.tests.ts --allow-write",
+    "test-watch": "deno test tests/*.tests.ts --watch --watch-exclude=schema/event-model.jtd.json --allow-write=./schema/event-model.jtd.json",
     "generate-schema": "deno run --allow-write=./schema/event-model.jtd.json src/gen-schema.ts"
   }
 }

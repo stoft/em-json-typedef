@@ -37,7 +37,7 @@ const specification: Schema = {
             title: { type: "string" },
             id: { type: "string" },
             type: { enum: ["SPEC_EVENT", "SPEC_READMODEL"] },
-            fields: fields,
+            fields: { ref: "fields" },
           },
         },
       },
@@ -47,7 +47,7 @@ const specification: Schema = {
             title: { type: "string" },
             id: { type: "string" },
             type: { enum: ["SPEC_COMMAND"] },
-            fields: fields,
+            fields: { ref: "fields" },
           },
         },
       },
@@ -59,7 +59,7 @@ const specification: Schema = {
             type: {
               enum: ["SPEC_EVENT", "SPEC_READMODEL", "SPEC_ERROR"],
             },
-            fields: fields,
+            fields: { ref: "fields" },
           },
         },
       },
@@ -78,7 +78,8 @@ export const schema: Schema = {
     fields: fields,
     command: {
       properties: {
-        fields: fields,
+        // this is "stringly" typed, if we instead had used `fields: fields` then the resulting JTD JSON would copy in values instead of referencing them which would bloat the JSON.
+        fields: { ref: "fields" },
         id: { type: "string" },
         title: { type: "string" },
         type: { enum: ["COMMAND"] },
@@ -86,7 +87,7 @@ export const schema: Schema = {
     },
     event: {
       properties: {
-        fields: fields,
+        fields: { ref: "fields" },
         id: { type: "string" },
         title: { type: "string" },
         type: { enum: ["EVENT"] },
@@ -98,11 +99,11 @@ export const schema: Schema = {
         title: { type: "string" },
         type: { enum: ["AGGREGATE"] },
       },
-      optionalProperties: { fields: fields },
+      optionalProperties: { fields: { ref: "fields" } },
     },
     processor: {
       properties: {
-        fields: fields,
+        fields: { ref: "fields" },
         id: { type: "string" },
         title: { type: "string" },
         type: { enum: ["AUTOMATION"] },
@@ -115,7 +116,7 @@ export const schema: Schema = {
         type: { enum: ["READMODEL"] },
       },
       optionalProperties: {
-        fields: fields,
+        fields: { ref: "fields" },
       },
     },
     screen: {
@@ -125,7 +126,7 @@ export const schema: Schema = {
         type: { enum: ["SCREEN"] },
       },
       optionalProperties: {
-        fields: fields,
+        fields: { ref: "fields" },
       },
     },
     specification: specification,

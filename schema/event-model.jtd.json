@@ -47,38 +47,7 @@
     "command": {
       "properties": {
         "fields": {
-          "elements": {
-            "properties": {
-              "cardinality": {
-                "enum": [
-                  "Single",
-                  "List"
-                ]
-              },
-              "example": {
-                "type": "string"
-              },
-              "mapping": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "type": {
-                "enum": [
-                  "String",
-                  "UUID",
-                  "Int",
-                  "Double",
-                  "Boolean",
-                  "Date",
-                  "DateTime",
-                  "Long",
-                  "Custom"
-                ]
-              }
-            }
-          }
+          "ref": "fields"
         },
         "id": {
           "type": "string"
@@ -96,38 +65,7 @@
     "event": {
       "properties": {
         "fields": {
-          "elements": {
-            "properties": {
-              "cardinality": {
-                "enum": [
-                  "Single",
-                  "List"
-                ]
-              },
-              "example": {
-                "type": "string"
-              },
-              "mapping": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "type": {
-                "enum": [
-                  "String",
-                  "UUID",
-                  "Int",
-                  "Double",
-                  "Boolean",
-                  "Date",
-                  "DateTime",
-                  "Long",
-                  "Custom"
-                ]
-              }
-            }
-          }
+          "ref": "fields"
         },
         "id": {
           "type": "string"
@@ -158,76 +96,14 @@
       },
       "optionalProperties": {
         "fields": {
-          "elements": {
-            "properties": {
-              "cardinality": {
-                "enum": [
-                  "Single",
-                  "List"
-                ]
-              },
-              "example": {
-                "type": "string"
-              },
-              "mapping": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "type": {
-                "enum": [
-                  "String",
-                  "UUID",
-                  "Int",
-                  "Double",
-                  "Boolean",
-                  "Date",
-                  "DateTime",
-                  "Long",
-                  "Custom"
-                ]
-              }
-            }
-          }
+          "ref": "fields"
         }
       }
     },
     "processor": {
       "properties": {
         "fields": {
-          "elements": {
-            "properties": {
-              "cardinality": {
-                "enum": [
-                  "Single",
-                  "List"
-                ]
-              },
-              "example": {
-                "type": "string"
-              },
-              "mapping": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "type": {
-                "enum": [
-                  "String",
-                  "UUID",
-                  "Int",
-                  "Double",
-                  "Boolean",
-                  "Date",
-                  "DateTime",
-                  "Long",
-                  "Custom"
-                ]
-              }
-            }
-          }
+          "ref": "fields"
         },
         "id": {
           "type": "string"
@@ -258,38 +134,7 @@
       },
       "optionalProperties": {
         "fields": {
-          "elements": {
-            "properties": {
-              "cardinality": {
-                "enum": [
-                  "Single",
-                  "List"
-                ]
-              },
-              "example": {
-                "type": "string"
-              },
-              "mapping": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "type": {
-                "enum": [
-                  "String",
-                  "UUID",
-                  "Int",
-                  "Double",
-                  "Boolean",
-                  "Date",
-                  "DateTime",
-                  "Long",
-                  "Custom"
-                ]
-              }
-            }
-          }
+          "ref": "fields"
         }
       }
     },
@@ -309,38 +154,7 @@
       },
       "optionalProperties": {
         "fields": {
-          "elements": {
-            "properties": {
-              "cardinality": {
-                "enum": [
-                  "Single",
-                  "List"
-                ]
-              },
-              "example": {
-                "type": "string"
-              },
-              "mapping": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "type": {
-                "enum": [
-                  "String",
-                  "UUID",
-                  "Int",
-                  "Double",
-                  "Boolean",
-                  "Date",
-                  "DateTime",
-                  "Long",
-                  "Custom"
-                ]
-              }
-            }
-          }
+          "ref": "fields"
         }
       }
     },
@@ -369,38 +183,7 @@
                   ]
                 },
                 "fields": {
-                  "elements": {
-                    "properties": {
-                      "cardinality": {
-                        "enum": [
-                          "Single",
-                          "List"
-                        ]
-                      },
-                      "example": {
-                        "type": "string"
-                      },
-                      "mapping": {
-                        "type": "string"
-                      },
-                      "name": {
-                        "type": "string"
-                      },
-                      "type": {
-                        "enum": [
-                          "String",
-                          "UUID",
-                          "Int",
-                          "Double",
-                          "Boolean",
-                          "Date",
-                          "DateTime",
-                          "Long",
-                          "Custom"
-                        ]
-                      }
-                    }
-                  }
+                  "ref": "fields"
                 }
               }
             }
@@ -420,38 +203,7 @@
                   ]
                 },
                 "fields": {
-                  "elements": {
-                    "properties": {
-                      "cardinality": {
-                        "enum": [
-                          "Single",
-                          "List"
-                        ]
-                      },
-                      "example": {
-                        "type": "string"
-                      },
-                      "mapping": {
-                        "type": "string"
-                      },
-                      "name": {
-                        "type": "string"
-                      },
-                      "type": {
-                        "enum": [
-                          "String",
-                          "UUID",
-                          "Int",
-                          "Double",
-                          "Boolean",
-                          "Date",
-                          "DateTime",
-                          "Long",
-                          "Custom"
-                        ]
-                      }
-                    }
-                  }
+                  "ref": "fields"
                 }
               }
             }
@@ -473,38 +225,7 @@
                   ]
                 },
                 "fields": {
-                  "elements": {
-                    "properties": {
-                      "cardinality": {
-                        "enum": [
-                          "Single",
-                          "List"
-                        ]
-                      },
-                      "example": {
-                        "type": "string"
-                      },
-                      "mapping": {
-                        "type": "string"
-                      },
-                      "name": {
-                        "type": "string"
-                      },
-                      "type": {
-                        "enum": [
-                          "String",
-                          "UUID",
-                          "Int",
-                          "Double",
-                          "Boolean",
-                          "Date",
-                          "DateTime",
-                          "Long",
-                          "Custom"
-                        ]
-                      }
-                    }
-                  }
+                  "ref": "fields"
                 }
               }
             }

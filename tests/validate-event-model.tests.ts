@@ -1,7 +1,9 @@
 import * as jtd from "npm:jtd";
 import { assertEquals } from "jsr:@std/assert";
 import { schema } from "../src/event-model.ts";
-import * as ai_schema from "../schema/event-model-ai.jtd.json" with { type: "json" };
+import * as em_ai_schema from "../schema/event-model-ai.jtd.json" with { type: "json" };
+import * as em_schema from "../schema/event-model.jtd.json" with {type: "json"};
+import { generate_schema } from "../src/gen-schema.ts";
 
 const json_example = `
 {
@@ -2085,12 +2087,18 @@ const json_example = `
 }
 `;
 
-Deno.test("validate event model JTD", () => {
+Deno.test("validate event model JTD from TS", () => {
   assertEquals(jtd.isValidSchema(schema), true);
   jtd.validate(schema, JSON.parse(json_example));
 });
 
+Deno.test("validate event model JTD from JSON", async () => {
+  await generate_schema();
+  assertEquals(jtd.isValidSchema(em_schema as jtd.Schema), true);
+  jtd.validate(schema, JSON.parse(json_example));
+})
+
 Deno.test("validate ai event model JTD", () => {
-  assertEquals(jtd.isValidSchema(ai_schema as jtd.Schema), true);
-  jtd.validate(ai_schema as jtd.Schema, JSON.parse(json_example));
+  assertEquals(jtd.isValidSchema(em_ai_schema as jtd.Schema), true);
+  jtd.validate(em_ai_schema as jtd.Schema, JSON.parse(json_example));
 });
