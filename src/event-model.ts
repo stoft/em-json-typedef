@@ -78,19 +78,21 @@ export const schema: Schema = {
     fields: fields,
     command: {
       properties: {
-        // this is "stringly" typed, if we instead had used `fields: fields` then the resulting JTD JSON would copy in values instead of referencing them which would bloat the JSON.
-        fields: { ref: "fields" },
         id: { type: "string" },
         title: { type: "string" },
         type: { enum: ["COMMAND"] },
+        // This is "stringly" typed so we lose typing checks here but if we instead had used
+        // `fields: fields` then the resulting JTD JSON would copy in values instead
+        // of referencing them which would bloat the JSON.
+        fields: { ref: "fields" },
       },
     },
     event: {
       properties: {
-        fields: { ref: "fields" },
         id: { type: "string" },
         title: { type: "string" },
         type: { enum: ["EVENT"] },
+        fields: { ref: "fields" },
       },
     },
     aggregate: {
@@ -103,10 +105,10 @@ export const schema: Schema = {
     },
     processor: {
       properties: {
-        fields: { ref: "fields" },
         id: { type: "string" },
         title: { type: "string" },
         type: { enum: ["AUTOMATION"] },
+        fields: { ref: "fields" },
       },
     },
     readmodel: {
@@ -149,21 +151,22 @@ export const schema: Schema = {
     slices: {
       elements: {
         properties: {
+          id: { type: "string" },
+          title: { type: "string" },
           commands: {
             elements: { ref: "command" },
           },
           events: {
             elements: { ref: "event" },
           },
-          id: { type: "string" },
-          processors: {
-            elements: {
-              ref: "processor",
-            },
-          },
           readmodels: {
             elements: {
               ref: "readmodel",
+            },
+          },
+          processors: {
+            elements: {
+              ref: "processor",
             },
           },
           screens: {
@@ -176,7 +179,6 @@ export const schema: Schema = {
               ref: "specification",
             },
           },
-          title: { type: "string" },
         },
       },
     },

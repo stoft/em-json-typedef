@@ -46,9 +46,6 @@
     },
     "command": {
       "properties": {
-        "fields": {
-          "ref": "fields"
-        },
         "id": {
           "type": "string"
         },
@@ -59,14 +56,14 @@
           "enum": [
             "COMMAND"
           ]
+        },
+        "fields": {
+          "ref": "fields"
         }
       }
     },
     "event": {
       "properties": {
-        "fields": {
-          "ref": "fields"
-        },
         "id": {
           "type": "string"
         },
@@ -77,6 +74,9 @@
           "enum": [
             "EVENT"
           ]
+        },
+        "fields": {
+          "ref": "fields"
         }
       }
     },
@@ -102,9 +102,6 @@
     },
     "processor": {
       "properties": {
-        "fields": {
-          "ref": "fields"
-        },
         "id": {
           "type": "string"
         },
@@ -115,6 +112,9 @@
           "enum": [
             "AUTOMATION"
           ]
+        },
+        "fields": {
+          "ref": "fields"
         }
       }
     },
@@ -255,6 +255,12 @@
     "slices": {
       "elements": {
         "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
           "commands": {
             "elements": {
               "ref": "command"
@@ -265,17 +271,14 @@
               "ref": "event"
             }
           },
-          "id": {
-            "type": "string"
+          "readmodels": {
+            "elements": {
+              "ref": "readmodel"
+            }
           },
           "processors": {
             "elements": {
               "ref": "processor"
-            }
-          },
-          "readmodels": {
-            "elements": {
-              "ref": "readmodel"
             }
           },
           "screens": {
@@ -287,9 +290,6 @@
             "elements": {
               "ref": "specification"
             }
-          },
-          "title": {
-            "type": "string"
           }
         }
       }
